@@ -30,7 +30,7 @@ jobs:
       - name: Criar nova tag caso não exista
         id: create_initial_tag
         env:
-          GH_TOKEN: ${{ secrets.KEY_EXEMPLO }}
+          KEY_EXEMPLO: ${{ secrets.KEY_EXEMPLO }}
         run: |
           if [ -z "$(git tag)" ]; then
             git config --global user.name 'github-actions'
@@ -94,7 +94,7 @@ jobs:
           
       - name: Commit e push
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          KEY_EXEMPLO: ${{ secrets.KEY_EXEMPLO }}
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
