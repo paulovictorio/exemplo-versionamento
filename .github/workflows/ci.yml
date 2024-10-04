@@ -32,12 +32,13 @@ jobs:
         env:
           KEY_EXEMPLO: ${{ secrets.KEY_EXEMPLO }}
         run: |
-          if [ -z "$(git tag)" ]; then
-            git config --global user.name 'github-actions'
-            git config --global user.email 'github-actions@github.com'
-            git tag -a v0.0.0 -m "Initial release"
-            git push origin v0.0.0
+          if [ -z "$(git tag -l v0.0.0)" ]; then
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git tag -a v0.0.0 -m "Initial release"
+          git push origin v0.0.0
           fi
+
 
       - name: Calcular nova versão
         id: version
