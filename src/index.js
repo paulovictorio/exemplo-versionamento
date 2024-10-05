@@ -10,11 +10,11 @@ app.get('/api', (req, res) => {
 });
 
 app.get('/api/test', (req, res) => {
-  res.send({ message: 'Endpoint de teste'});
+  res.send({ message: 'Endpoint de test'});
 });
 
 app.get('/api/test-2', (req, res) => {
-  res.send({ message: 'Endpoint de teste 2334'});
+  res.send({ message: 'Endpoint de teste 233'});
 });
 
 app.listen(port, () => {
